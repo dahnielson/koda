@@ -28,7 +28,7 @@ function createIframe (cls, root, data = {}) {
   const js = formatCode('js', data)
   const iframe = createElement('iframe', cls, 0, root)
   iframe.width = '100%'
-  iframe.height = '200px'
+  iframe.height = '100%'
   iframe.src = 'about:blank'
   iframe.style.overflow = 'hidden'
   iframe.setAttribute('frameborder', 0)
@@ -89,6 +89,7 @@ var _ = _self.Koda = {
   init: function () {
     const elements = Array.from(document.querySelectorAll('.koda'))
     Promise.all(elements.map((root) => {
+      root.style.setProperty('--koda-height', root.dataset.height ? root.dataset.height : '235px')
       const tabs = createElement('div', 'koda-tabs', 0, root)
       const boxes = createElement('div', 'koda-boxes', 0, root)
       return Promise.all(['html', 'css', 'js'].map((lang) => {

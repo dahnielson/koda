@@ -1,5 +1,5 @@
 .koda {
-  height: 235px; /* TODO inline the height */
+  height: var(--koda-height, 235px);
   overflow: hidden;
 }
 
@@ -9,8 +9,8 @@
 
 .koda-tabs {
   background-color: darkblue;
-  height: 35px; /* TODO inline the height */
-  line-height: 35px; /* TODO inline the height */
+  height: var(--koda-tabs-height, 35px);
+  line-height: var(--koda-tabs-height, 35px);
 }
 
 .koda-tab {
@@ -28,7 +28,7 @@
 
 .koda-boxes {
   position: relative;
-  height: 200px; /* TODO inline the height */
+  height: calc(var(--koda-height, 235px) - var(--koda-tabs-height, 35px));
 }
 
 .koda-box {
