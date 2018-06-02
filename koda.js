@@ -43,7 +43,7 @@ function addTab (lang, tabs) {
   const link = createElement('a', 0, 0, tab)
   link.dataset.toggle = 'koda-box-' + lang
   link.setAttribute('href', '#')
-  link.appendChild(document.createTextNode(lang.toUpperCase()))
+  link.appendChild(document.createTextNode(lang))
   tabs.appendChild(tab)
 }
 
@@ -100,10 +100,10 @@ var _ = _self.Koda = {
         }
       })).then((data) => {
         const o = {'html': data[0], 'css': data[1], 'js': data[2]}
-        addResult(o, tabs, boxes)
         addCode('html', o, tabs, boxes)
         addCode('css', o, tabs, boxes)
         addCode('js', o, tabs, boxes)
+        addResult(o, tabs, boxes)
         prism.highlightAllUnder(boxes)
       })
     })).then(() => { return activateTabs() })

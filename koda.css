@@ -1,7 +1,7 @@
 .koda {
   height: var(--koda-height, 235px);
   overflow: hidden;
-  border: 1px solid rgb(61, 61, 62);
+  border: 1px solid #3d3d3d;
 }
 
 .koda > code {
@@ -9,29 +9,39 @@
 }
 
 .koda-tabs {
-  background-color: darkblue;
+  background-color: #3d3d3d;
   height: var(--koda-tabs-height, 35px);
-  line-height: var(--koda-tabs-height, 35px);
   margin: 0;
   padding: 0;
   display: flex;
+  align-items: stretch;
 }
 
 .koda-tab {
   display: block;
+  padding: 0;
+}
+
+.koda-tab.active {
+  background-color: #ccc;
 }
 
 .koda-tab > a {
-  color: darkgrey;
+  display: block;
+  height: 100%;
+  padding: 0 1em;
+  line-height: var(--koda-tabs-height, 35px);
+  color: #ccc;
   text-decoration: none;
+  text-transform: uppercase;
 }
 
 .koda-tab.active > a {
-  color: white;
+  color: #000;
 }
 
-.koda-tab {
-  padding: 0 .5em;
+.koda-tab-result > a {
+  text-transform: capitalize;
 }
 
 .koda-boxes {
