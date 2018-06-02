@@ -1,6 +1,4 @@
-function endWith (a, b) {
-  return a.substr(-b.length) === b
-}
+import './koda.css'
 
 function createElement (tag, cls, id, root) {
   var el = document.createElement(tag)
@@ -15,9 +13,9 @@ function formatCode (lang, data) {
     case 'html':
       return data['html'] ? data.html : ''
     case 'css':
-      return data['css'] ? (endWith(data.css, '.css') ? '<link rel="stylesheet" href="' + data.css + '">' : '<style>' + data.css + '</style>') : ''
+      return data['css'] ? (data.css.endsWith('.css') ? '<link rel="stylesheet" href="' + data.css + '">' : '<style>' + data.css + '</style>') : ''
     case 'js':
-      return data['js'] ? (endWith(data.js, '.js') ? '<script src="' + data.js + '"></script>' : '<script>' + data.js + '</script>') : ''
+      return data['js'] ? (data.js.endsWith('.js') ? '<script src="' + data.js + '"></script>' : '<script>' + data.js + '</script>') : ''
     default:
       return ''
   }
@@ -39,23 +37,49 @@ function createIframe (cls, root, data = {}) {
   return iframe
 }
 
-function addResult (data, tabs, boxes) {
-  createIframe('koda-result', createElement('div', 'box', 'result', boxes), data)
-  const tab = createElement('a', 'tab', 'result', tabs)
-  tab.setAttribute('href', '#result')
+function addTab (lang, tabs) {
+  const tab = createElement('a', 'koda-tab koda-tab-' + lang, 0, tabs)
+  tab.dataset.toggle = 'koda-box-' + lang
+  tab.setAttribute('href', '#')
+  tab.appendChild(document.createTextNode(lang.toUpperCase()))
   tabs.appendChild(tab)
+}
+
+function addResult (data, tabs, boxes) {
+  addTab('result', tabs)
+  createIframe('koda-result', createElement('div', 'koda-box koda-box-result', 0, boxes), data)
 }
 
 function addCode (lang, data, tabs, boxes) {
   if (typeof data[lang] !== 'undefined') {
-    const box = createElement('div', 'box', lang, boxes)
+    addTab(lang, tabs)
+    const box = createElement('div', 'koda-box koda-box-' + lang, 0, boxes)
     const pre = createElement('pre', 'highlight', 0, box)
     const code = createElement('code', 'language-' + lang, 0, pre)
     code.appendChild(document.createTextNode(data[lang]))
-    const tab = createElement('a', 'tab', lang, tabs)
-    tab.setAttribute('href', '#' + lang)
-    tabs.appendChild(tab)
   }
+}
+
+function toggleTab (tab) {
+  const root = tab.parentNode.parentNode
+  const box = root.querySelector('.' + tab.dataset.toggle)
+  const elements = Array.from(root.querySelectorAll('.koda-tab, .koda-box'))
+  elements.map((element) => {
+    element.classList.remove('active')
+  })
+  box.classList.add('active')
+  tab.classList.add('active')
+}
+
+function activateTabs () {
+  const tabs = Array.from(document.querySelectorAll('.koda-tabs'))
+  return Promise.all(tabs.map((tab) => {
+    toggleTab(tab.querySelector(tab.parentNode.dataset.default ? '.koda-tab-' + tab.parentNode.dataset.default : '.koda-tab-result'))
+    const targets = Array.from(tab.querySelectorAll('[data-toggle]'))
+    return Promise.all(targets.map((target) => {
+      target.addEventListener('click', (e) => { toggleTab(e.target) })
+    }))
+  }))
 }
 
 var _self = (typeof window !== 'undefined') ? window : {}
@@ -64,10 +88,8 @@ var _ = _self.Koda = {
   init: function () {
     const elements = Array.from(document.querySelectorAll('.koda'))
     Promise.all(elements.map((root) => {
-      const embed = createIframe('koda-embed', root)
-      const embedBody = embed.contentWindow.document.body
-      const tabs = createElement('div', 'tabs', 'tabs', embedBody)
-      const boxes = createElement('div', 'boxes', 'boxes', embedBody)
+      const tabs = createElement('div', 'koda-tabs', 0, root)
+      const boxes = createElement('div', 'koda-boxes', 0, root)
       return Promise.all(['html', 'css', 'js'].map((lang) => {
         const el = root.querySelector('.language-' + lang)
         if (el && 'code' in el.dataset) {
@@ -79,6 +101,7 @@ var _ = _self.Koda = {
         addCode('html', o, tabs, boxes)
         addCode('css', o, tabs, boxes)
         addCode('js', o, tabs, boxes)
+        return activateTabs()
       })
     }))
   }

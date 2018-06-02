@@ -1,0 +1,48 @@
+.koda {
+  height: 235px; /* TODO inline the height */
+  overflow: hidden;
+}
+
+.koda > code {
+  display: none;
+}
+
+.koda-tabs {
+  background-color: darkblue;
+  height: 35px; /* TODO inline the height */
+  line-height: 35px; /* TODO inline the height */
+}
+
+.koda-tab {
+  color: darkgrey;
+  text-decoration: none;
+}
+
+.koda-tabs > .active {
+  color: white;
+}
+
+.koda-tab {
+  padding: 0 10px;
+}
+
+.koda-boxes {
+  position: relative;
+  height: 200px; /* TODO inline the height */
+}
+
+.koda-box {
+  position: absolute;
+  display: none;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+.koda-box-result {
+  overflow: hidden;
+}
+
+.koda-boxes > .active {
+  display: block;
+}
