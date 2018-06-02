@@ -75,7 +75,7 @@ function toggleTab (tab) {
 function activateTabs () {
   const tabs = Array.from(document.querySelectorAll('.koda-tabs'))
   return Promise.all(tabs.map((tab) => {
-    toggleTab(tab.querySelector(tab.parentNode.dataset.default ? '.koda-tab-' + tab.parentNode.dataset.default : '.koda-tab-result'))
+    toggleTab(tab.querySelector(tab.parentNode.dataset.selected ? '.koda-tab-' + tab.parentNode.dataset.selected : '.koda-tab-result'))
     const targets = Array.from(tab.querySelectorAll('[data-toggle]'))
     return Promise.all(targets.map((target) => {
       target.addEventListener('click', (e) => { toggleTab(e.target) })
