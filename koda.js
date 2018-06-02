@@ -41,7 +41,7 @@ function createIframe (cls, root, data = {}) {
 function addTab (lang, tabs) {
   const tab = createElement('li', 'koda-tab koda-tab-' + lang, 0, tabs)
   const link = createElement('a', 0, 0, tab)
-  link.dataset.toggle = 'koda-box-' + lang
+  link.dataset.toggle = lang
   link.setAttribute('href', '#')
   link.appendChild(document.createTextNode(lang))
   tabs.appendChild(tab)
@@ -64,13 +64,20 @@ function addCode (lang, data, tabs, boxes) {
 
 function toggleTab (tab) {
   const root = tab.parentNode.parentNode
-  const box = root.querySelector('.' + tab.firstElementChild.dataset.toggle)
-  const elements = Array.from(root.querySelectorAll('.koda-tab, .koda-box'))
+  const lang = tab.firstElementChild.dataset.toggle
+  const box = root.querySelector('.koda-box-' + lang)
+  const elements = Array.from(root.querySelectorAll('.koda-tabs, .koda-boxes, .koda-tab, .koda-box'))
   elements.map((element) => {
     element.classList.remove('active')
+    element.classList.remove('result')
+    element.classList.remove('html')
+    element.classList.remove('css')
+    element.classList.remove('js')
   })
   box.classList.add('active')
+  box.parentNode.classList.add(lang)
   tab.classList.add('active')
+  tab.parentNode.classList.add(lang)
 }
 
 function activateTabs () {
