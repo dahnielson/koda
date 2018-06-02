@@ -1,5 +1,7 @@
 .koda {
-  height: var(--koda-height, 235px);
+  --koda-height: 235px;
+  --koda-height-tabs: 2em;
+  height: var(--koda-height);
   overflow: hidden;
   border: 1px solid #3d3d3d;
 }
@@ -10,7 +12,7 @@
 
 .koda-tabs {
   background-color: #3d3d3d;
-  height: var(--koda-tabs-height, 35px);
+  height: var(--koda-height-tabs);
   margin: 0;
   padding: 0;
   display: flex;
@@ -30,7 +32,7 @@
   display: block;
   height: 100%;
   padding: 0 1em;
-  line-height: var(--koda-tabs-height, 35px);
+  line-height: var(--koda-height-tabs);
   color: #ccc;
   text-decoration: none;
   text-transform: uppercase;
@@ -46,7 +48,7 @@
 
 .koda-boxes {
   position: relative;
-  height: calc(var(--koda-height, 235px) - var(--koda-tabs-height, 35px));
+  height: calc(var(--koda-height) - var(--koda-height-tabs));
 }
 
 .koda-box {
