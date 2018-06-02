@@ -1,6 +1,7 @@
 .koda {
   height: var(--koda-height, 235px);
   overflow: hidden;
+  border: 1px solid rgb(61, 61, 62);
 }
 
 .koda > code {
