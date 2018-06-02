@@ -12,19 +12,26 @@
   background-color: darkblue;
   height: var(--koda-tabs-height, 35px);
   line-height: var(--koda-tabs-height, 35px);
+  margin: 0;
+  padding: 0;
+  display: flex;
 }
 
 .koda-tab {
+  display: block;
+}
+
+.koda-tab > a {
   color: darkgrey;
   text-decoration: none;
 }
 
-.koda-tabs > .active {
+.koda-tab.active > a {
   color: white;
 }
 
 .koda-tab {
-  padding: 0 10px;
+  padding: 0 .5em;
 }
 
 .koda-boxes {

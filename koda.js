@@ -39,10 +39,11 @@ function createIframe (cls, root, data = {}) {
 }
 
 function addTab (lang, tabs) {
-  const tab = createElement('a', 'koda-tab koda-tab-' + lang, 0, tabs)
-  tab.dataset.toggle = 'koda-box-' + lang
-  tab.setAttribute('href', '#')
-  tab.appendChild(document.createTextNode(lang.toUpperCase()))
+  const tab = createElement('li', 'koda-tab koda-tab-' + lang, 0, tabs)
+  const link = createElement('a', 0, 0, tab)
+  link.dataset.toggle = 'koda-box-' + lang
+  link.setAttribute('href', '#')
+  link.appendChild(document.createTextNode(lang.toUpperCase()))
   tabs.appendChild(tab)
 }
 
@@ -63,7 +64,7 @@ function addCode (lang, data, tabs, boxes) {
 
 function toggleTab (tab) {
   const root = tab.parentNode.parentNode
-  const box = root.querySelector('.' + tab.dataset.toggle)
+  const box = root.querySelector('.' + tab.firstElementChild.dataset.toggle)
   const elements = Array.from(root.querySelectorAll('.koda-tab, .koda-box'))
   elements.map((element) => {
     element.classList.remove('active')
@@ -78,7 +79,7 @@ function activateTabs () {
     toggleTab(tab.querySelector(tab.parentNode.dataset.selected ? '.koda-tab-' + tab.parentNode.dataset.selected : '.koda-tab-result'))
     const targets = Array.from(tab.querySelectorAll('[data-toggle]'))
     return Promise.all(targets.map((target) => {
-      target.addEventListener('click', (e) => { toggleTab(e.target) })
+      target.addEventListener('click', (e) => { toggleTab(e.target.parentNode) })
     }))
   }))
 }
@@ -90,7 +91,7 @@ var _ = _self.Koda = {
     const roots = Array.from(document.querySelectorAll('.koda'))
     Promise.all(roots.map((root) => {
       root.style.setProperty('--koda-height', root.dataset.height ? root.dataset.height : '235px')
-      const tabs = createElement('div', 'koda-tabs', 0, root)
+      const tabs = createElement('ul', 'koda-tabs', 0, root)
       const boxes = createElement('div', 'koda-boxes', 0, root)
       return Promise.all(['html', 'css', 'js'].map((lang) => {
         const el = root.querySelector('.language-' + lang)
