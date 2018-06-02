@@ -6,6 +6,7 @@
   --koda-color-css: #3f51b5;
   --koda-color-js: #ffeb3b;
   --koda-color-result: #bdbdbd;
+  --koda-color-background: #3d3d3d;
   height: var(--koda-height);
   overflow: hidden;
 }
@@ -15,7 +16,7 @@
 }
 
 .koda-tabs {
-  background-color: #3d3d3d;
+  background-color: var(--koda-color-background);
   height: var(--koda-height-tabs);
   margin: 0;
   padding: 0;
@@ -94,7 +95,10 @@
 
 .koda-boxes {
   position: relative;
-  height: calc(var(--koda-height) - var(--koda-height-tabs) + var(--koda-border));
+  height: calc(var(--koda-height) - var(--koda-height-tabs) - 1px + var(--koda-border));
+  border-left: 1px solid var(--koda-color-background);
+  border-bottom: 1px solid var(--koda-color-background);
+  border-right: 1px solid var(--koda-color-background);
 }
 
 .koda-box {
