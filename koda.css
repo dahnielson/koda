@@ -39,6 +39,13 @@
   overflow: auto;
 }
 
+.koda-box > pre[class*="language-"] {
+  margin: 0;
+  padding: 1em;
+  min-height: calc(100% - 2em);
+  overflow: visible;
+}
+
 .koda-box-result {
   overflow: hidden;
 }

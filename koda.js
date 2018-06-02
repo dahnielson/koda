@@ -1,3 +1,4 @@
+import prism from 'prismjs'
 import './koda.css'
 
 function createElement (tag, cls, id, root) {
@@ -54,7 +55,7 @@ function addCode (lang, data, tabs, boxes) {
   if (typeof data[lang] !== 'undefined') {
     addTab(lang, tabs)
     const box = createElement('div', 'koda-box koda-box-' + lang, 0, boxes)
-    const pre = createElement('pre', 'highlight', 0, box)
+    const pre = createElement('pre', 0, 0, box)
     const code = createElement('code', 'language-' + lang, 0, pre)
     code.appendChild(document.createTextNode(data[lang]))
   }
@@ -101,6 +102,7 @@ var _ = _self.Koda = {
         addCode('html', o, tabs, boxes)
         addCode('css', o, tabs, boxes)
         addCode('js', o, tabs, boxes)
+        prism.highlightAllUnder(boxes)
       })
     })).then(() => { return activateTabs() })
   }

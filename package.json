@@ -23,7 +23,9 @@
     "url": "https://github.com/KodapanXYZ/koda/issues"
   },
   "homepage": "https://github.com/KodapanXYZ/koda#readme",
-  "dependencies": {},
+  "dependencies": {
+    "prismjs": "^1.14.0"
+  },
   "devDependencies": {
     "eslint": "^4.19.1",
     "eslint-config-standard": "^11.0.0",
