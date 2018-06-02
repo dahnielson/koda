@@ -1,0 +1,37 @@
+{
+  "name": "koda",
+  "version": "0.1.0",
+  "description": "A library to embed front-end demos",
+  "main": "koda.js",
+  "scripts": {
+    "start": "npm run dev",
+    "dev": "parcel index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KodapanXYZ/koda.git"
+  },
+  "keywords": [
+    "code",
+    "snippet",
+    "demo"
+  ],
+  "author": "Anders Dahnielson <anders@dahnielson.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/KodapanXYZ/koda/issues"
+  },
+  "homepage": "https://github.com/KodapanXYZ/koda#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.8.0",
+    "eslint-plugin-standard": "^3.1.0",
+    "parcel-bundler": "^1.8.1",
+    "postcss-modules": "^1.1.0"
+  }
+}
