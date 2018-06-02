@@ -101,9 +101,8 @@ var _ = _self.Koda = {
         addCode('html', o, tabs, boxes)
         addCode('css', o, tabs, boxes)
         addCode('js', o, tabs, boxes)
-        return activateTabs()
       })
-    }))
+    })).then(() => { return activateTabs() })
   }
 }
 
