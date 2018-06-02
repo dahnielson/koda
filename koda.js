@@ -87,8 +87,8 @@ var _self = (typeof window !== 'undefined') ? window : {}
 
 var _ = _self.Koda = {
   init: function () {
-    const elements = Array.from(document.querySelectorAll('.koda'))
-    Promise.all(elements.map((root) => {
+    const roots = Array.from(document.querySelectorAll('.koda'))
+    Promise.all(roots.map((root) => {
       root.style.setProperty('--koda-height', root.dataset.height ? root.dataset.height : '235px')
       const tabs = createElement('div', 'koda-tabs', 0, root)
       const boxes = createElement('div', 'koda-boxes', 0, root)
