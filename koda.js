@@ -42,7 +42,6 @@ function addTab (lang, tabs) {
   const tab = createElement('li', 'koda-tab koda-tab-' + lang, 0, tabs)
   const link = createElement('a', 0, 0, tab)
   link.dataset.toggle = lang
-  link.setAttribute('href', '#')
   link.appendChild(document.createTextNode(lang))
   tabs.appendChild(tab)
 }
