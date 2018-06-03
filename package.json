@@ -1,5 +1,5 @@
 {
-  "name": "koda",
+  "name": "@kodapan/koda",
   "version": "0.1.0",
   "description": "A library to embed front-end demos",
   "main": "koda.js",
