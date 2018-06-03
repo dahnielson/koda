@@ -10,7 +10,7 @@ You can either install Koda by running yarn (recommended)
 yarn add @kodapan/koda
 ```
 
-or using npm
+or use npm
 
 ```bash
 npm install @kodapan/koda
@@ -18,17 +18,17 @@ npm install @kodapan/koda
 
 ## Basic usage
 
-You will need  to include the `koda.css` and `koda.js` files.
+You will need to include the `koda.css` and `koda.js` files.
 
 ```html
 <link rel="stylesheet" href="koda.css">
 <script src="koda.js"></script>
 ```
 
-Koda is using Prism to style and highlight the code, why you will also need to include the Prism theme of your choice that should be used to highlight the code.
+Koda is using Prism to style and highlight the code, why you will need to include the Prism theme of your choice that should be used to highlight the code.
 
 ```html
-<link href="themes/prism.css" rel="stylesheet" />
+<link href="themes/prism.css" rel="stylesheet">
 ```
 
 Next you need to set up the code in HTML.
@@ -49,13 +49,11 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 * **Anders Dahnielson** - *Initial work* - [PurpleBooth](https://github.com/dahnielson)
 
-See also the list of [contributors](https://github.com/dahnielsonur/koda/contributors) who participated in this project.
-
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
 ## Acknowledgments
 
-* [CodePen](https://codepen.io)
-* [Cody](https://github.com/lmgonzalves/cody)
+* [CodePen](https://codepen.io) for the original concept
+* [Cody](https://github.com/lmgonzalves/cody) for the idea to roll our own
