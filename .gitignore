@@ -30,4 +30,5 @@ node_modules
 # Build directory
 dist/index.html
 dist/koda.*
+dist/prism.*
 .cache
