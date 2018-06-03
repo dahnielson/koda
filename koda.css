@@ -1,8 +1,10 @@
 .koda {
-  --koda-height: 235px;
-  --koda-height-tabs: 2em;
-  --koda-border: 4px;
+  --koda-height: 224px;
+  --koda-height-tabs: 24px;
+  --koda-border-size-tabs: 4px;
+  --koda-border-size-boxes: 1px;
   --koda-color: #ccc;
+  --koda-font-size-tab: 12px;
   --koda-color-html: #fff;
   --koda-color-css: #fff;
   --koda-color-js: #000;
@@ -27,23 +29,23 @@
   padding: 0;
   display: flex;
   align-items: stretch;
-  font-size: .75rem;
+  font-size: var(--koda-font-size-tab);
 }
 
 .koda > ul.koda-tabs.html {
-  border-bottom: var(--koda-border) solid var(--koda-background-color-html);
+  border-bottom: var(--koda-border-size-tabs) solid var(--koda-background-color-html);
 }
 
 .koda > ul.koda-tabs.css {
-  border-bottom: var(--koda-border) solid var(--koda-background-color-css);
+  border-bottom: var(--koda-border-size-tabs) solid var(--koda-background-color-css);
 }
 
 .koda > ul.koda-tabs.js {
-  border-bottom: var(--koda-border) solid var(--koda-background-color-js);
+  border-bottom: var(--koda-border-size-tabs) solid var(--koda-background-color-js);
 }
 
 .koda > ul.koda-tabs.result {
-  border-bottom: var(--koda-border) solid var(--koda-background-color-result);
+  border-bottom: var(--koda-border-size-tabs) solid var(--koda-background-color-result);
 }
 
 .koda .koda-tab {
@@ -102,10 +104,10 @@
 
 .koda .koda-boxes {
   position: relative;
-  height: calc(var(--koda-height) - var(--koda-height-tabs) - 1px + var(--koda-border));
-  border-left: 1px solid var(--koda-background-color);
-  border-bottom: 1px solid var(--koda-background-color);
-  border-right: 1px solid var(--koda-background-color);
+  height: calc(var(--koda-height) - var(--koda-height-tabs) - var(--koda-border-size-tabs) - var(--koda-border-size-boxes));
+  border-left: var(--koda-border-size-boxes) solid var(--koda-background-color);
+  border-bottom: var(--koda-border-size-boxes) solid var(--koda-background-color);
+  border-right: var(--koda-border-size-boxes) solid var(--koda-background-color);
 }
 
 .koda .koda-box {
