@@ -15,7 +15,7 @@
   display: none;
 }
 
-.koda-tabs {
+.koda > ul.koda-tabs {
   background-color: var(--koda-color-background);
   height: var(--koda-height-tabs);
   margin: 0;
@@ -25,44 +25,45 @@
   font-size: .75rem;
 }
 
-.koda-tabs.html {
+.koda > ul.koda-tabs.html {
   border-bottom: var(--koda-border) solid var(--koda-color-html);
 }
 
-.koda-tabs.css {
+.koda > ul.koda-tabs.css {
   border-bottom: var(--koda-border) solid var(--koda-color-css);
 }
 
-.koda-tabs.js {
+.koda > ul.koda-tabs.js {
   border-bottom: var(--koda-border) solid var(--koda-color-js);
 }
 
-.koda-tabs.result {
+.koda > ul.koda-tabs.result {
   border-bottom: var(--koda-border) solid var(--koda-color-result);
 }
 
-.koda-tab {
+.koda .koda-tab {
   display: block;
   padding: 0;
+  margin: 0;
 }
 
-.koda-tab-html.active {
+.koda .koda-tab-html.active {
   background-color: var(--koda-color-html);
 }
 
-.koda-tab-css.active {
+.koda .koda-tab-css.active {
   background-color: var(--koda-color-css);
 }
 
-.koda-tab-js.active {
+.koda .koda-tab-js.active {
   background-color: var(--koda-color-js);
 }
 
-.koda-tab-result.active {
+.koda .koda-tab-result.active {
   background-color: var(--koda-color-result);
 }
 
-.koda-tab > a {
+.koda .koda-tab > a {
   display: block;
   height: 100%;
   padding: 0 1em;
@@ -73,27 +74,27 @@
   font-weight: 700;
 }
 
-.koda-tab-result > a {
+.koda .koda-tab-result > a {
   text-transform: capitalize;
 }
 
-.koda-tab-html.active > a {
+.koda .koda-tab-html.active > a {
   color: #fff;
 }
 
-.koda-tab-css.active > a {
+.koda .koda-tab-css.active > a {
   color: #fff;
 }
 
-.koda-tab-js.active > a {
+.koda .koda .koda-tab-js.active > a {
   color: #000;
 }
 
-.koda-tab-result.active > a {
+.koda .koda-tab-result.active > a {
   color: #000;
 }
 
-.koda-boxes {
+.koda .koda-boxes {
   position: relative;
   height: calc(var(--koda-height) - var(--koda-height-tabs) - 1px + var(--koda-border));
   border-left: 1px solid var(--koda-color-background);
@@ -101,7 +102,7 @@
   border-right: 1px solid var(--koda-color-background);
 }
 
-.koda-box {
+.koda .koda-box {
   position: absolute;
   display: none;
   width: 100%;
@@ -109,17 +110,17 @@
   overflow: auto;
 }
 
-.koda-box > pre[class*="language-"] {
+.koda .koda-box > pre[class*="language-"] {
   margin: 0;
   padding: 1em;
-  min-height: calc(100% - 2em);
+  min-height: 100%;
   overflow: visible;
 }
 
-.koda-box-result {
+.koda .koda-box-result {
   overflow: hidden;
 }
 
-.koda-boxes > .active {
+.koda .koda-boxes > .active {
   display: block;
 }
