@@ -47,7 +47,7 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Authors
 
-* **Anders Dahnielson** - *Initial work* - [PurpleBooth](https://github.com/dahnielson)
+* **Anders Dahnielson** - *Initial work* - [dahnielson](https://github.com/dahnielson)
 
 ## License
 
