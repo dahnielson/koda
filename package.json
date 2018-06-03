@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/KodapanXYZ/koda.git"
+    "url": "git+https://github.com/dahnielson/koda.git"
   },
   "keywords": [
     "code",
@@ -20,9 +20,9 @@
   "author": "Anders Dahnielson <anders@dahnielson.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/KodapanXYZ/koda/issues"
+    "url": "https://github.com/dahnielson/koda/issues"
   },
-  "homepage": "https://github.com/KodapanXYZ/koda#readme",
+  "homepage": "https://github.com/dahnielson/koda#readme",
   "dependencies": {
     "prismjs": "^1.14.0"
   },
