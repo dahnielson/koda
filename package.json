@@ -1,6 +1,6 @@
 {
   "name": "@kodapan/koda",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "A library to embed front-end demos",
   "main": "koda.js",
   "scripts": {
