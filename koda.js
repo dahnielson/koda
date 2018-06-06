@@ -49,14 +49,12 @@ function addTab (lang, tabs) {
   tabs.appendChild(tab)
 }
 
-function addResult (data, tabs, boxes) {
-  addTab('result', tabs)
+function addResult (data, boxes) {
   createIframe('koda-result', createElement('div', 'koda-box koda-box-result', 0, boxes), data)
 }
 
-function addCode (lang, data, tabs, boxes) {
+function addCode (lang, data, boxes) {
   if (typeof data[lang] !== 'undefined') {
-    addTab(lang, tabs)
     const box = createElement('div', 'koda-box koda-box-' + lang, 0, boxes)
     const pre = createElement('pre', 0, 0, box)
     const code = createElement('code', 'language-' + lang, 0, pre)
@@ -105,14 +103,16 @@ var _ = _self.Koda = {
       return Promise.all(['html', 'css', 'js'].map((lang) => {
         const el = root.querySelector('.language-' + lang)
         if (el && 'code' in el.dataset) {
+          addTab(lang, tabs)
           return fetch(el.dataset.code).then(response => response.text())
         }
       })).then((data) => {
+        addTab('result', tabs)
         const o = {'html': data[0], 'css': data[1], 'js': data[2]}
-        addCode('html', o, tabs, boxes)
-        addCode('css', o, tabs, boxes)
-        addCode('js', o, tabs, boxes)
-        addResult(o, tabs, boxes)
+        addCode('html', o, boxes)
+        addCode('css', o, boxes)
+        addCode('js', o, boxes)
+        addResult(o, boxes)
         prism.highlightAllUnder(boxes)
       })
     })).then(() => { return activateTabs() })
