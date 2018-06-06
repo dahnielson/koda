@@ -1,5 +1,8 @@
 import prism from 'prismjs'
+import 'prismjs/plugins/custom-class/prism-custom-class.js'
 import './koda.css'
+
+prism.plugins.customClass.prefix('prism--')
 
 function createElement (tag, cls, id, root) {
   var el = document.createElement(tag)
