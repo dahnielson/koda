@@ -100,14 +100,15 @@ var _ = _self.Koda = {
       root.style.setProperty('--koda-height', root.dataset.height ? root.dataset.height : '235px')
       const tabs = createElement('ul', 'koda-tabs', 0, root)
       const boxes = createElement('div', 'koda-boxes', 0, root)
-      return Promise.all(['html', 'css', 'js'].map((lang) => {
+      return Promise.all(['html', 'css', 'js', 'result'].map((lang) => {
         const el = root.querySelector('.language-' + lang)
         if (el && 'code' in el.dataset) {
           addTab(lang, tabs)
           return fetch(el.dataset.code).then(response => response.text())
+        } else if (lang === 'result') {
+          addTab(lang, tabs)
         }
       })).then((data) => {
-        addTab('result', tabs)
         const o = {'html': data[0], 'css': data[1], 'js': data[2]}
         addCode('html', o, boxes)
         addCode('css', o, boxes)
