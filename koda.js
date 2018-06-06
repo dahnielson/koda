@@ -98,6 +98,7 @@ var _ = _self.Koda = {
     const roots = Array.from(document.querySelectorAll('.koda'))
     Promise.all(roots.map((root) => {
       root.style.setProperty('--koda-height', root.dataset.height ? root.dataset.height : '235px')
+      const spinner = createElement('div', 'koda-spinner', 0, root)
       const tabs = createElement('ul', 'koda-tabs', 0, root)
       const boxes = createElement('div', 'koda-boxes', 0, root)
       return Promise.all(['html', 'css', 'js', 'result'].map((lang) => {
@@ -115,7 +116,7 @@ var _ = _self.Koda = {
         addCode('js', o, boxes)
         addResult(o, boxes)
         prism.highlightAllUnder(boxes)
-      })
+      }).then(() => { spinner.classList.add('koda-finished-loading') })
     })).then(() => { return activateTabs() })
   }
 }
