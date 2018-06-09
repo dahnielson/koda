@@ -11,13 +11,13 @@ A library to embed front-end demos.
 You can either install Koda by running yarn (recommended)
 
 ```bash
-yarn add @kodapan/koda
+yarn add @kodapan/koda prismjs
 ```
 
 or use npm
 
 ```bash
-npm install @kodapan/koda
+npm install @kodapan/koda prismjs --save
 ```
 
 ## Usage
