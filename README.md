@@ -1,6 +1,7 @@
 # Koda
 
 [![Travis CI badge][travis badge]][travis]
+[![Greenkeeper badge][greenkeeper badge]][greenkeeper]
 A library to embed front-end demos.
 
 ## Installing
@@ -60,3 +61,5 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 * [Cody](https://github.com/lmgonzalves/cody) for the idea to roll our own
 [travis badge]: https://travis-ci.com/dahnielson/koda.svg?branch=master
 [travis]: https://travis-ci.com/dahnielson/koda
+[greenkeeper badge]: https://badges.greenkeeper.io/dahnielson/koda.svg
+[greenkeeper]: https://greenkeeper.io
