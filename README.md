@@ -1,5 +1,6 @@
 # Koda
 
+[![Travis CI badge][travis badge]][travis]
 A library to embed front-end demos.
 
 ## Installing
@@ -57,3 +58,5 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 * [CodePen](https://codepen.io) for the original concept
 * [Cody](https://github.com/lmgonzalves/cody) for the idea to roll our own
+[travis badge]: https://travis-ci.com/dahnielson/koda.svg?branch=master
+[travis]: https://travis-ci.com/dahnielson/koda
