@@ -6,7 +6,7 @@
 
 A library to embed front-end demos.
 
-## Installing
+## Install
 
 You can either install Koda by running yarn (recommended)
 
@@ -20,7 +20,7 @@ or use npm
 npm install @kodapan/koda
 ```
 
-## Basic usage
+## Usage
 
 You will need to include the `koda.css` and `koda.js` files.
 
@@ -47,7 +47,7 @@ Next you need to set up the code in HTML.
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/dahnielson/koda/tags). 
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/dahnielson/koda/tags).
 
 ## Authors
 
@@ -55,12 +55,13 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+MIT License, see [LICENSE.md](LICENSE.md) for details.
 
 ## Acknowledgments
 
 * [CodePen](https://codepen.io) for the original concept
-* [Cody](https://github.com/lmgonzalves/cody) for the idea to roll our own
+* [Cody](https://github.com/lmgonzalves/cody) for the idea to roll my own
+
 [travis badge]: https://travis-ci.com/dahnielson/koda.svg?branch=master
 [travis]: https://travis-ci.com/dahnielson/koda
 [greenkeeper badge]: https://badges.greenkeeper.io/dahnielson/koda.svg
