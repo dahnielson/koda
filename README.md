@@ -2,6 +2,8 @@
 
 [![Travis CI badge][travis badge]][travis]
 [![Greenkeeper badge][greenkeeper badge]][greenkeeper]
+[![Standard JS CI badge][standardjs badge]][standardjs]
+
 A library to embed front-end demos.
 
 ## Installing
@@ -63,3 +65,5 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 [travis]: https://travis-ci.com/dahnielson/koda
 [greenkeeper badge]: https://badges.greenkeeper.io/dahnielson/koda.svg
 [greenkeeper]: https://greenkeeper.io
+[standardjs badge]: https://img.shields.io/badge/code%20syle-standard-brightgreen.svg
+[standardjs]: https://github.com/standard/standard
