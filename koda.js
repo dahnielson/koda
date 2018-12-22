@@ -110,7 +110,7 @@ var _ = _self.Koda = {
           addTab(lang, tabs)
         }
       })).then((data) => {
-        const o = {'html': data[0], 'css': data[1], 'js': data[2]}
+        const o = { 'html': data[0], 'css': data[1], 'js': data[2] }
         addCode('html', o, boxes)
         addCode('css', o, boxes)
         addCode('js', o, boxes)
