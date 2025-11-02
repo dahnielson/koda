@@ -43,3 +43,6 @@ dist/prism.*
 
 # Annoying crap
 .DS_Store
+
+# Parcel
+.parcel-cache
