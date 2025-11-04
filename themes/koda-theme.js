@@ -1,4 +1,7 @@
-.koda {
+import { css } from 'lit'
+
+export const kodaTheme = css`
+:host {
   --koda-height: 224px;
   --koda-height-tabs: 24px;
   --koda-border-size-tabs: 4px;
@@ -21,11 +24,11 @@
   position: relative;
 }
 
-.koda > code {
+:host > code {
   display: none;
 }
 
-.koda > ul.koda-tabs {
+:host > ul.koda-tabs {
   background-color: var(--koda-background-color);
   height: var(--koda-height-tabs);
   margin: 0;
@@ -35,46 +38,46 @@
   font-size: var(--koda-font-size-tab);
 }
 
-.koda > ul.koda-tabs.html {
+:host > ul.koda-tabs.html {
   border-bottom: var(--koda-border-size-tabs) solid var(--koda-background-color-html);
 }
 
-.koda > ul.koda-tabs.css {
+:host > ul.koda-tabs.css {
   border-bottom: var(--koda-border-size-tabs) solid var(--koda-background-color-css);
 }
 
-.koda > ul.koda-tabs.js {
+:host > ul.koda-tabs.js {
   border-bottom: var(--koda-border-size-tabs) solid var(--koda-background-color-js);
 }
 
-.koda > ul.koda-tabs.result {
+:host > ul.koda-tabs.result {
   border-bottom: var(--koda-border-size-tabs) solid var(--koda-background-color-result);
 }
 
-.koda .koda-tab {
+:host .koda-tab {
   cursor: pointer;
   display: block;
   padding: 0;
   margin: 0;
 }
 
-.koda .koda-tab-html.active {
+:host .koda-tab-html.active {
   background-color: var(--koda-background-color-html);
 }
 
-.koda .koda-tab-css.active {
+:host .koda-tab-css.active {
   background-color: var(--koda-background-color-css);
 }
 
-.koda .koda-tab-js.active {
+:host .koda-tab-js.active {
   background-color: var(--koda-background-color-js);
 }
 
-.koda .koda-tab-result.active {
+:host .koda-tab-result.active {
   background-color: var(--koda-background-color-result);
 }
 
-.koda .koda-tab > a {
+:host .koda-tab > a {
   display: block;
   height: 100%;
   padding: 0 1em;
@@ -85,27 +88,27 @@
   font-weight: 700;
 }
 
-.koda .koda-tab-result > a {
+:host .koda-tab-result > a {
   text-transform: capitalize;
 }
 
-.koda .koda-tab-html.active > a {
+:host .koda-tab-html.active > a {
   color: var(--koda-color-html);
 }
 
-.koda .koda-tab-css.active > a {
+:host .koda-tab-css.active > a {
   color: var(--koda-color-css);
 }
 
-.koda .koda-tab-js.active > a {
+:host .koda-tab-js.active > a {
   color: var(--koda-color-js);
 }
 
-.koda .koda-tab-result.active > a {
+:host .koda-tab-result.active > a {
   color: var(--koda-color-result);
 }
 
-.koda .koda-boxes {
+:host .koda-boxes {
   position: relative;
   height: calc(var(--koda-height) - var(--koda-height-tabs) - var(--koda-border-size-tabs) - var(--koda-border-size-boxes));
   border-left: var(--koda-border-size-boxes) solid var(--koda-background-color);
@@ -113,7 +116,7 @@
   border-right: var(--koda-border-size-boxes) solid var(--koda-background-color);
 }
 
-.koda .koda-box {
+:host .koda-box {
   position: absolute;
   display: none;
   width: 100%;
@@ -121,22 +124,26 @@
   overflow: auto;
 }
 
-.koda .koda-box > pre[class*="language-"] {
+:host .koda-box > pre[class*="language-"] {
   margin: 0;
   padding: 1em;
   min-height: 100%;
   overflow: visible;
 }
 
-.koda .koda-box-result {
+:host .koda-box-result {
   overflow: hidden;
 }
 
-.koda .koda-boxes > .active {
+:host .koda-box-result > iframe {
+  overflow: hidden;
+}
+
+:host .koda-boxes > .active {
   display: block;
 }
 
-.koda .koda-spinner {
+:host .koda-spinner {
   position: absolute;
   top: 0;
   left: 0;
@@ -146,10 +153,10 @@
   background: var(--koda-background-color-loading-from);
   background: linear-gradient(-45deg, var(--koda-background-color-loading-from) 0%, var(--koda-background-color-loading-to) 50%, var(--koda-background-color-loading-from) 100%);
   background-size: 1000% 100%;
-	animation: loading 2s infinite normal none;
+  animation: loading 2s infinite normal none;
 }
 
-.koda .koda-spinner.koda-finished-loading {
+:host .koda-spinner.koda-finished-loading {
   animation: 0.5s 1 forwards reveal;
 }
 
@@ -158,7 +165,7 @@
   to { opacity: 0; visibility: hidden; }
 }
 
- @keyframes loading {
+@keyframes loading {
   0% {
     background-position: 100% 50%;
   }
@@ -166,3 +173,4 @@
     background-position: 0% 50%;
   }
 }
+`

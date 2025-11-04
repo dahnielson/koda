@@ -36,13 +36,11 @@ build/Release
 node_modules
 
 # Build directory
-dist/index.html
-dist/koda.*
-dist/prism.*
-.cache
+dist/*
 
 # Annoying crap
 .DS_Store
 
 # Parcel
+.cache
 .parcel-cache

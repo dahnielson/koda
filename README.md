@@ -1,10 +1,9 @@
 # Koda
 
-[![Travis CI badge][travis badge]][travis]
 [![Greenkeeper badge][greenkeeper badge]][greenkeeper]
 [![Standard JS CI badge][standardjs badge]][standardjs]
 
-A library to embed front-end demos.
+A web component to embed front-end demos.
 
 ## Install
 
@@ -22,28 +21,25 @@ npm install @kodapan/koda prismjs --save
 
 ## Usage
 
-You will need to include the `koda.css` and `koda.js` files.
+You will need to include the `koda-embed.js` file as a module.
 
 ```html
-<link rel="stylesheet" href="koda.css">
-<script src="koda.js"></script>
-```
-
-Koda is using Prism to style and highlight the code, why you will need to include the Prism theme of your choice that should be used to highlight the code.
-
-```html
-<link href="themes/prism.css" rel="stylesheet">
+<script src="koda-embed.js" type="module"></script>
 ```
 
 Next you need to set up the code in HTML.
 
 ```html
-<div class="koda" data-selected="js" data-height="250px">
+<koda-embed selected="html" height="250px" theme="light">
   <code class="language-html" data-code="demo.html"></code>
   <code class="language-css" data-code="demo.css"></code>
   <code class="language-js" data-code="demo.js"></code>
-</div>
+</koda-embed>
 ```
+
+While Koda internarly is using Prism to highlight the code, it is using it own
+scoped styles to theme the code. Currently available themes are "light" and
+"dark".
 
 ## Versioning
 
